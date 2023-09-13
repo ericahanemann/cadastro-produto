@@ -1,0 +1,46 @@
+<h1>Editando produto: {{product.name}}</h1>
+
+<form action="/products/edit" method="post">
+  <input type="hidden" name="id" value="{{product.id}}" />
+
+  <div class="form-control">
+    <label for="name">Produto:</label>
+    <input
+      type="text"
+      name="name"
+      placeholder="Nome do produto"
+      value="{{product.name}}"
+    />
+  </div>
+
+  <div class="form-control">
+    <label for="description">Detalhes do produto:</label>
+    <textarea
+      type="text"
+      name="description"
+      placeholder="Detalhes do produto"
+    >{{product.description}}</textarea>
+  </div>
+
+  <div class="form-control">
+    <label for="name">Cor:</label>
+    <input
+      type="text"
+      name="color"
+      placeholder="Cor do produto"
+      value="{{product.color}}"
+    />
+  </div>
+
+  <div class="form-control">
+    <label for="unit_price">Valor Unitário:</label>
+    <input type="number" name="unit_price" value="{{product.unit_price}}" />
+  </div>
+
+  <div class="form-control">
+    <label for="stock_amount">Unidades em estoque:</label>
+    <input type="number" name="stock_amount" value="{{product.stock_amount}}" />
+  </div>
+
+  <input type="submit" value="Salvar" />
+</form>
