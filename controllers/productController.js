@@ -1,12 +1,10 @@
 const Product = require("../models/Product");
 
 module.exports = class ProductController {
-  //método que mostra o form de criação
   static createProduct(req, res) {
     res.render("products/create");
   }
 
-  //método que recebe os dados do form e salva no banco de dados
   static async createProductPost(req, res) {
     const product = {
       name: req.body.name,
@@ -24,7 +22,6 @@ module.exports = class ProductController {
       .catch((err) => console.log("erro ao cadastrar produto"));
   }
 
-  //método que lista os produtos do banco de dados
   static showProducts(req, res) {
     Product.findAll({ raw: true })
       .then((data) => {
@@ -40,7 +37,6 @@ module.exports = class ProductController {
       .catch((err) => console.log(err));
   }
 
-  //método para excluir um produto do banco de dados
   static async removeProduct(req, res) {
     const id = req.body.id;
 
@@ -51,7 +47,6 @@ module.exports = class ProductController {
       .catch((err) => console.log(err));
   }
 
-  //método para apresentar form de alteração do produto
   static updateProduct(req, res) {
     const id = req.params.id;
 
@@ -62,7 +57,6 @@ module.exports = class ProductController {
       .catch((err) => console.log(err));
   }
 
-  //método que recebe os dados alterados do form e faz o update no banco de dados
   static async updateProductPost(req, res) {
     const id = req.body.id;
     const product = {
