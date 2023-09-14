@@ -4,20 +4,20 @@ This is a project developed for the Web Programming subject of the Systems Analy
 You can check out the layout design bellow.
 
 - Stock page
-![](src/assets/)
+![](public/images/stock-page.png)
 - Adding new product
-![](src/assets/)
+![](public/images/add-page.png)
 - Editing product
-![](src/assets/)
+![](public/images/edit-page.png)
 
 
 ## Technologies
 
-This project was developed using the following technologies and modules:
+This project was developed using the following technologies:
 - Node JS
-- NPM
-- Express
-- Express-handlebars
-- MySQL2
-- Sequelize
-- Nodemon
+- NPM (modules)
+  - Express
+  - Express-handlebars
+  - MySQL2
+  - Sequelize
+  - Nodemon
