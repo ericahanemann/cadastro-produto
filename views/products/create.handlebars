@@ -1,4 +1,4 @@
-<h1>Adicionando produto ao catálogo</h1>
+<h1>Adicionando produto ao estoque:</h1>
 <form action="/products/add" method="POST">
   <div class="form-control">
     <label for="name">Produto:</label>
@@ -27,6 +27,16 @@
   <div class="form-control">
     <label for="stock_amount">Unidades em estoque:</label>
     <input type="number" name="stock_amount" />
+  </div>
+
+  <div class="form-control">
+    <label for="total_stock_value">Valor total em estoque:</label>
+    <input
+      type="text"
+      name="total_stock_value"
+      disabled="true"
+      value="Calculado automaticamente"
+    />
   </div>
 
   <input type="submit" value="Adicionar" />

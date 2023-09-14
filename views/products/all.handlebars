@@ -1,12 +1,26 @@
-<h1>Produtos no catálogo:</h1>
+<h1>estoque:</h1>
 
-<ul class="tarefa-lista">
+<ul class="products-list">
   {{#if noProducts}}
-    <p>Não há produtos no catálogo</p>
+    <p>Não há produtos no estoque.</p>
   {{/if}}
   {{#each products}}
     <li>
-      <a href="/products/edit/{{this.id}}" class="title">{{this.name}}</a>
+      <div class="product-item">
+        <a href="/products/edit/{{this.id}}">
+          <div class="product-icon">
+            <img src="/images/hanger.png" alt="hanger-icon" width="250" />
+          </div>
+          <div class="product-info">
+            <h3 class="title">{{this.name}}</h3>
+            <div class="info">
+              <p>Cor: {{this.color}}</p>
+              <p>Valor unitário: R${{this.unit_price}}</p>
+              <p>Valor total em estoque: R${{this.total_stock_value}}</p>
+            </div>
+          </div>
+        </a>
+      </div>
 
       <span class="actions">
         <a href="/products/edit/{{this.id}}"><i

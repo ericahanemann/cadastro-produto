@@ -1,7 +1,25 @@
 * {
-  font-family: Helvetica, sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #000;
+  --secondary-color: #fff;
+  --highlights-color: #999;
+}
+
+h1 {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bolder;
+  margin: 5rem 0 3rem 0;
+}
+
+textarea {
+  resize: none;
 }
 
 #navbar {
@@ -10,8 +28,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #00008b;
-  color: #fff;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+#navbar img {
+  z-index: 1;
 }
 
 #navbar ul {
@@ -25,12 +47,18 @@
 
 #navbar ul li a {
   text-decoration: none;
-  color: #fff;
+  color: var(--secondary-color);
+  transition: 0.5s;
+}
+
+#navbar ul li a:hover {
+  color: var(--highlights-color);
 }
 
 .container {
-  max-width: 450px;
+  max-width: 1020px;
   margin: 2em auto;
+  padding: 10px;
 }
 
 .container form {
@@ -52,12 +80,12 @@
 .form-control textarea {
   padding: 7px;
   border-radius: 3px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--primary-color);
 }
 
 form input[type="submit"] {
-  background-color: #00008b;
-  color: #fff;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
   padding: 0.7em 1.5em;
   font-weight: bold;
   border-radius: 5px;
@@ -65,42 +93,82 @@ form input[type="submit"] {
   cursor: pointer;
 }
 
-.tarefa-lista {
+form input[type="submit"]:hover {
+  background-color: #393939;
+}
+
+.products-list {
   list-style: none;
   margin-top: 1em;
-}
-
-.tarefa-lista li {
-  padding: 0.5em;
-  margin-bottom: 1em;
-  border-bottom: 1px solid #efefef;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: start;
+  gap: 33px;
 }
 
-.tarefa-lista .title {
+.products-list li .product-item {
+  width: 300px;
+  border: 2px solid var(--primary-color);
+  border-radius: 1rem;
+}
+
+.product-item:hover {
+  transform: scale(1.009);
+  transition: transform 0.15s;
+}
+
+.product-item a {
+  list-style: none;
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+.product-item a .product-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color);
+  border-radius: 0.8rem 0.8rem 0 0;
+}
+
+.product-item a .product-info {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.product-item a .product-info .title {
   font-weight: bold;
-  color: #00008b;
+  color: var(--primary-color);
   transition: 0.5s;
   font-size: 1.2em;
+  margin-top: 1rem;
 }
 
-.tarefa-lista .title:hover {
-  color: #333;
+.product-item a .product-info .info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .actions {
   display: flex;
+  justify-content: center;
+  margin-top: 2rem;
 }
 
 .actions i {
   font-size: 1.5em;
+  font-weight: bolder;
   margin-right: 0.6em;
-  color: #333;
+  color: var(--highlights-color);
 }
 
 .actions i:hover {
-  color: #00008b;
+  color: var(--primary-color);
 }
 
 .actions form {
@@ -111,4 +179,8 @@ form input[type="submit"] {
   background-color: transparent;
   border: none;
   cursor: pointer;
+}
+
+.actions button i:hover {
+  color: red;
 }
